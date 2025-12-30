@@ -23,15 +23,15 @@
 
 <style scoped>
 .bg-light-custom {
-  /* Pastikan warna ini sama dengan section Menu/Testimoni */
+  
   background-color: #f8f9fa !important; 
 }
 
 .instagram-cta-section {
-  /* Hapus padding bawaan agar warna background penuh ke samping */
+  
   padding: 0;
   width: 100%;
 }
 
-/* ... CSS lainnya tetap sama ... */
+
 </style>

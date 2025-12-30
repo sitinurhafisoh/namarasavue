@@ -61,14 +61,14 @@
 
 <style scoped>
 .main-footer-container {
-  /* Menjamin footer menempel ke bawah dan tidak ada margin luar */
+  
   margin: 0;
   padding: 0;
   width: 100%;
 }
 
 .footer-dark-bg {
-  background-color: #634819; /* Warna cokelat tua */
+  background-color: #634819; 
   width: 100%;
 }
 

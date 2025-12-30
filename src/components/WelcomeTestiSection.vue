@@ -85,7 +85,7 @@ const testimonials = [
 .py-100 { padding: 100px 0; }
 
 .testimonial-section {
-  background-color: #f8f9fa; /* Sesuaikan dengan warna section menu */
+  background-color: #f8f9fa; 
   padding: 100px 0;
 }
 
@@ -105,21 +105,21 @@ const testimonials = [
   transition: all 0.3s ease;
   border: none;
   
-  /* Update di sini: 0 0 artinya shadow pas di tengah, 25px adalah sebarannya */
+  
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.15); 
 }
 
 .testimonial-card:hover {
-  transform: scale(1.02); /* Sedikit membesar agar efek shadow makin terasa */
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.25); /* Shadow menyeluruh makin kuat */
+  transform: scale(1.02); 
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.25); 
 }
 
 .testimonial-card .card-heading {
-  color: #212529 !important; /* Judul Hitam */
+  color: #212529 !important; 
 }
 
 .testimonial-card .card-text {
-  color: #6c757d !important; /* Teks Abu-abu Tua */
+  color: #6c757d !important; 
   font-style: italic;
 }
 
@@ -131,7 +131,7 @@ const testimonials = [
   border: 1px solid #eee;
 }
 
-/* Custom Pagination Swiper */
+
 :deep(.swiper-pagination-bullet-active) {
   background: #8B5E34 !important;
 }

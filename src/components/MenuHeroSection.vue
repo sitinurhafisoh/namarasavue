@@ -34,8 +34,8 @@ import listMenuImg from '../assets/galeri/listmenu.png'
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center; /* tengah horizontal */
-  align-items: center;     /* tengah vertikal */
+  justify-content: center; 
+  align-items: center;     
   text-align: center;
 }
 

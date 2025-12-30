@@ -115,7 +115,6 @@ import { reactive } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useReservasiStore } from '../stores/reservasi'
 
-// ✅ AKTIFKAN
 const route = useRoute()
 const router = useRouter()
 const reservasiStore = useReservasiStore()
@@ -130,7 +129,7 @@ const formData = reactive({
 })
 
 const handleSubmit = () => {
-  // ✅ VALIDASI JAM 17 - 23
+  
   const waktu = new Date(formData.date)
   const jam = waktu.getHours()
 
@@ -172,7 +171,7 @@ const handleSubmit = () => {
   font-size: 0.9rem;
 }
 
-/* Hover effect pada tombol selanjutnya */
+
 .btn-outline-light {
   border-width: 2px;
   transition: all 0.3s ease;

@@ -24,7 +24,7 @@
 <script setup>
 import berandaImg from '../assets/galeri/Beranda.jpeg'
 
-// Bind gambar ke background via reactive style
+
 const heroStyle = {
   backgroundImage: `linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url(${berandaImg})`,
   backgroundSize: 'cover',

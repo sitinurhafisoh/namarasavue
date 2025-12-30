@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.frameParent">
 
-    <!-- HEADER -->
+    
     <div :class="$style.reservasiNamarasaParent">
       <div :class="$style.reservasiNamarasa">RESERVASI NAMARASA</div>
 
@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <!-- PILIH MEJA -->
+    
     <div :class="$style.frameWrapper">
       <div :class="$style.jumlahTamuParent">
 
@@ -22,7 +22,7 @@
           Jumlah Tamu: {{ reservasi.guests }}
         </div>
 
-        <!-- SELECT MEJA -->
+        
         <select
           :class="$style.pilihMejaSelect"
           v-model="mejaDipilih"
@@ -37,7 +37,7 @@
       </div>
     </div>
 
-    <!-- FOOTER -->
+    
     <div :class="$style.denganMenekanTombolPesanMParent">
       <div :class="$style.denganMenekanTombol">
         Dengan menekan tombol “pesan menu” berarti anda menyatakan setuju dan siap
@@ -46,7 +46,7 @@
 
       <div :class="$style.frameGroup">
 
-        <!-- KEMBALI -->
+        
         <div
           :class="$style.uilarrowLeftParent"
           @click="kembali"
@@ -54,7 +54,7 @@
           <div :class="$style.reservasiNamarasa">Sebelumnya</div>
         </div>
 
-        <!-- LANJUT -->
+        
         <div
           :class="$style.uilarrowLeftParent"
           @click="keMenu"
@@ -79,7 +79,7 @@ const reservasi = useReservasiStore()
 
 const mejaDipilih = ref('')
 
-/* 🔒 Proteksi: tidak boleh lompat halaman */
+
 onMounted(() => {
   if (!reservasi.firstName || !reservasi.dateTime) {
     const returnTo = typeof route.query.returnTo === 'string' ? route.query.returnTo : ''
@@ -96,7 +96,7 @@ const keMenu = () => {
     return
   }
 
-  // ✅ SIMPAN MEJA KE PINIA
+  
   reservasi.setMeja(mejaDipilih.value)
 
   const returnTo = typeof route.query.returnTo === 'string' ? route.query.returnTo : ''
@@ -126,7 +126,7 @@ const kembali = () => {
   color: #fff;
 }
 
-/* HEADER */
+
 .reservasiNamarasaParent {
   display: flex;
   flex-direction: column;
@@ -143,7 +143,7 @@ const kembali = () => {
   line-height: 1.2;
 }
 
-/* PILIH MEJA */
+
 .frameWrapper {
   width: 100%;
 }
@@ -166,7 +166,7 @@ const kembali = () => {
   color: #000;
 }
 
-/* FOOTER */
+
 .denganMenekanTombolPesanMParent {
   width: 100%;
   display: flex;

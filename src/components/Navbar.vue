@@ -39,7 +39,7 @@
 </template>
 
 <style scoped>
-/* Pastikan font mirip dengan gambar (misal: Poppins) */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 .custom-navbar {
@@ -49,7 +49,7 @@
 }
 
 .logo-text {
-  color: #634819; /* Cokelat khas Namarasa */
+  color: #634819; 
   letter-spacing: -1px;
 }
 
@@ -62,7 +62,7 @@
 }
 
 .nav-link:hover, .nav-link.active {
-  color: #ffb100 !important; /* Kuning saat hover */
+  color: #ffb100 !important; 
 }
 
 </style>
