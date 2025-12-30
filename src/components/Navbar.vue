@@ -1,9 +1,9 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top py-3 custom-navbar">
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <router-link class="navbar-brand" to="/">
         <h2 class="fw-bold mb-0 logo-text">namarasa</h2>
-      </a>
+      </router-link>
 
       <button 
         class="navbar-toggler border-0" 
@@ -17,19 +17,19 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto me-3">
           <li class="nav-item">
-            <a class="nav-link px-3 active" href="#">Beranda</a>
+            <router-link class="nav-link px-3" to="/">Beranda</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-3" href="#tentang-kami">Tentang Kami</a>
+            <router-link class="nav-link px-3" to="/#tentang-kami">Tentang Kami</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-3" href="#menu">Menu</a>
+            <router-link class="nav-link px-3" to="/menu">Menu</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-3" href="#review">Review</a>
+            <router-link class="nav-link px-3" to="/#review">Review</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-3" href="#kontak">Kontak Kami</a>
+            <router-link class="nav-link px-3" to="/#kontak">Kontak Kami</router-link>
           </li>
         </ul>
         

@@ -18,11 +18,11 @@
           <div class="col-lg-3 col-md-6 ps-lg-5">
             <h5 class="fw-bold mb-4">Navigasi Cepat</h5>
             <ul class="list-unstyled">
-              <li class="mb-2"><a href="#" class="footer-link">Beranda</a></li>
-              <li class="mb-2"><a href="#" class="footer-link">Tentang Kami</a></li>
-              <li class="mb-2"><a href="#" class="footer-link">Menu</a></li>
-              <li class="mb-2"><a href="#" class="footer-link">Review</a></li>
-              <li class="mb-2"><a href="#" class="footer-link">Kontak Kami</a></li>
+              <li class="mb-2"><router-link to="/" class="footer-link">Beranda</router-link></li>
+              <li class="mb-2"><router-link to="/#tentang-kami" class="footer-link">Tentang Kami</router-link></li>
+              <li class="mb-2"><router-link to="/menu" class="footer-link">Menu</router-link></li>
+              <li class="mb-2"><router-link to="/#review" class="footer-link">Review</router-link></li>
+              <li class="mb-2"><router-link to="/#kontak" class="footer-link">Kontak Kami</router-link></li>
             </ul>
           </div>
 

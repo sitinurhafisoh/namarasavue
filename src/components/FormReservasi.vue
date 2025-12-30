@@ -112,10 +112,11 @@
 
 <script setup>
 import { reactive } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useReservasiStore } from '../stores/reservasi'
 
 // ✅ AKTIFKAN
+const route = useRoute()
 const router = useRouter()
 const reservasiStore = useReservasiStore()
 
@@ -139,12 +140,15 @@ const handleSubmit = () => {
   }
 
   reservasiStore.setReservasi(formData)
-  router.push('/pilihmeja')
+  const returnTo = typeof route.query.returnTo === 'string' ? route.query.returnTo : ''
+  router.push({
+    path: '/pilihmeja',
+    query: returnTo ? { returnTo } : {},
+  })
 }
 </script>
 
 <style scoped>
-
 
 .reservation-wrapper {
   background-color: #f5f5f5; 

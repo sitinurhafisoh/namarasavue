@@ -70,9 +70,10 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useReservasiStore } from '../stores/reservasi'
 
+const route = useRoute()
 const router = useRouter()
 const reservasi = useReservasiStore()
 
@@ -81,7 +82,11 @@ const mejaDipilih = ref('')
 /* 🔒 Proteksi: tidak boleh lompat halaman */
 onMounted(() => {
   if (!reservasi.firstName || !reservasi.dateTime) {
-    router.push('/reservasi')
+    const returnTo = typeof route.query.returnTo === 'string' ? route.query.returnTo : ''
+    router.push({
+      path: '/reservasi',
+      query: returnTo ? { returnTo } : {},
+    })
   }
 })
 
@@ -94,11 +99,16 @@ const keMenu = () => {
   // ✅ SIMPAN MEJA KE PINIA
   reservasi.setMeja(mejaDipilih.value)
 
-  router.push('/menu')
+  const returnTo = typeof route.query.returnTo === 'string' ? route.query.returnTo : ''
+  router.push(returnTo || '/menu')
 }
 
 const kembali = () => {
-  router.push('/reservasi')
+  const returnTo = typeof route.query.returnTo === 'string' ? route.query.returnTo : ''
+  router.push({
+    path: '/reservasi',
+    query: returnTo ? { returnTo } : {},
+  })
 }
 </script>
 
