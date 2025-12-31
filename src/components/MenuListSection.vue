@@ -184,7 +184,7 @@ function goCheckout() {
 
 <style scoped>
 .menu-section {
-  background: #f7f4ef;
+  background: #ECECEC;
 }
 
 .cart-toast {

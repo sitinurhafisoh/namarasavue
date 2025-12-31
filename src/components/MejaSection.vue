@@ -1,70 +1,71 @@
 <template>
-  <div :class="$style.frameParent">
+  <div :class="$style.pageWrapper">
+    <div :class="$style.frameParent">
 
-    
-    <div :class="$style.reservasiNamarasaParent">
-      <div :class="$style.reservasiNamarasa">RESERVASI NAMARASA</div>
+      
+      <div :class="$style.reservasiNamarasaParent">
+        <div :class="$style.smallText">RESERVASI NAMARASA</div>
 
-      <div :class="$style.reservasiTempatMeja">
-        Reservasi tempat meja di Namarasa
-      </div>
-
-      <div :class="$style.reservasiNamarasa">
-        Pilih meja tempat anda reservasi di Namarasa
-      </div>
-    </div>
-
-    
-    <div :class="$style.frameWrapper">
-      <div :class="$style.jumlahTamuParent">
-
-        <div :class="$style.reservasiNamarasa">
-          Jumlah Tamu: {{ reservasi.guests }}
+        <div :class="$style.reservasiTempatMeja">
+          Reservasi Tempat Meja
         </div>
 
-        
-        <select
-          :class="$style.pilihMejaSelect"
-          v-model="mejaDipilih"
-        >
-          <option value="" disabled>Pilih Meja ...</option>
-          <option value="Lily">Lily (10 Guest)</option>
-          <option value="Anggrek">Anggrek (8 Guest)</option>
-          <option value="Mawar">Mawar (6 Guest)</option>
-          <option value="Melati">Melati (4 Guest)</option>
-        </select>
-
-      </div>
-    </div>
-
-    
-    <div :class="$style.denganMenekanTombolPesanMParent">
-      <div :class="$style.denganMenekanTombol">
-        Dengan menekan tombol “pesan menu” berarti anda menyatakan setuju dan siap
-        bertanggung jawab atas reservasi yang telah dibuat
+        <div :class="$style.smallText">
+          Pilih meja tempat anda reservasi di Namarasa
+        </div>
       </div>
 
-      <div :class="$style.frameGroup">
+      
+      <div :class="$style.frameWrapper">
+        <div :class="$style.jumlahTamuParent">
+          <div :class="$style.smallText">
+            Jumlah Tamu: {{ reservasi.guests }}
+          </div>
 
-        
-        <div
-          :class="$style.uilarrowLeftParent"
-          @click="kembali"
-        >
-          <div :class="$style.reservasiNamarasa">Sebelumnya</div>
+          <select
+            :class="$style.pilihMejaSelect"
+            v-model="mejaDipilih"
+          >
+            <option value="" disabled>Pilih Meja ...</option>
+            <option value="Lily">Lily (10 Guest)</option>
+            <option value="Anggrek">Anggrek (8 Guest)</option>
+            <option value="Mawar">Mawar (6 Guest)</option>
+            <option value="Melati">Melati (4 Guest)</option>
+          </select>
+        </div>
+      </div>
+
+      
+      <div :class="$style.footerSection">
+        <div :class="$style.noteText">
+          Dengan menekan tombol “Pesan Menu” berarti anda menyatakan setuju dan
+          siap bertanggung jawab atas reservasi yang telah dibuat
         </div>
 
-        
-        <div
-          :class="$style.uilarrowLeftParent"
-          @click="keMenu"
-        >
-          <div :class="$style.reservasiNamarasa">Pesan Menu</div>
+        <div :class="$style.buttonGroup">
+
+          
+          <div
+            :class="[$style.buttonBase, $style.buttonBack]"
+            @click="kembali"
+          >
+            <span :class="$style.arrow">←</span>
+            <span>Sebelumnya</span>
+          </div>
+
+          
+          <div
+            :class="[$style.buttonBase, $style.buttonPrimary]"
+            @click="keMenu"
+          >
+            <span>Pesan Menu</span>
+            <span :class="$style.arrow">→</span>
+          </div>
+
         </div>
-
       </div>
-    </div>
 
+    </div>
   </div>
 </template>
 
@@ -79,14 +80,9 @@ const reservasi = useReservasiStore()
 
 const mejaDipilih = ref('')
 
-
 onMounted(() => {
   if (!reservasi.firstName || !reservasi.dateTime) {
-    const returnTo = typeof route.query.returnTo === 'string' ? route.query.returnTo : ''
-    router.push({
-      path: '/reservasi',
-      query: returnTo ? { returnTo } : {},
-    })
+    router.push('/reservasi')
   }
 })
 
@@ -95,34 +91,36 @@ const keMenu = () => {
     alert('Silakan pilih meja terlebih dahulu')
     return
   }
-
-  
   reservasi.setMeja(mejaDipilih.value)
-
-  const returnTo = typeof route.query.returnTo === 'string' ? route.query.returnTo : ''
-  router.push(returnTo || '/menu')
+  router.push('/menu')
 }
 
 const kembali = () => {
-  const returnTo = typeof route.query.returnTo === 'string' ? route.query.returnTo : ''
-  router.push({
-    path: '/reservasi',
-    query: returnTo ? { returnTo } : {},
-  })
+  router.push('/reservasi')
 }
 </script>
 
 <style module>
+
+.pageWrapper {
+  min-height: 100vh;
+  background-color: #ECECEC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .frameParent {
   width: 100%;
   max-width: 960px;
-  margin: 60px auto;
+  margin: 40px 16px;
   border-radius: 20px;
   background-color: #775a36;
   display: flex;
   flex-direction: column;
   padding: 40px 32px;
-  gap: 24px;
+  gap: 28px;
   color: #fff;
 }
 
@@ -130,26 +128,21 @@ const kembali = () => {
 .reservasiNamarasaParent {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
-.reservasiNamarasa {
+.smallText {
   font-size: 14px;
+  opacity: 0.9;
 }
 
 .reservasiTempatMeja {
-  font-size: 42px;
+  font-size: 40px;
   font-weight: 800;
   line-height: 1.2;
 }
 
-
-.frameWrapper {
-  width: 100%;
-}
-
 .jumlahTamuParent {
-  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -159,58 +152,82 @@ const kembali = () => {
   width: 100%;
   border-radius: 6px;
   background-color: #fff;
-  border: 1px solid #fff;
-  padding: 10px 12px;
+  border: none;
+  padding: 12px;
   font-size: 14px;
   cursor: pointer;
-  color: #000;
 }
 
-
-.denganMenekanTombolPesanMParent {
-  width: 100%;
+.footerSection {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   text-align: center;
 }
 
-.denganMenekanTombol {
-  font-weight: 500;
+.noteText {
+  font-size: 13px;
+  opacity: 0.9;
 }
 
-.frameGroup {
+.buttonGroup {
   display: flex;
   gap: 12px;
 }
 
-.uilarrowLeftParent {
-  width: 160px;
+.buttonBase {
+  width: 180px;
   border-radius: 6px;
-  border: 1px solid #fff;
-  padding: 10px;
-  text-align: center;
+  padding: 12px;
   cursor: pointer;
+  border: 1px solid #fff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: 0.3s;
 }
 
-@media (max-width: 768px) {
-  .frameParent {
-    margin: 40px 16px;
-    padding: 28px 20px;
-  }
+.buttonBack {
+  background-color: #ff0000;
+}
 
+.buttonBack:hover {
+  background-color: #cc0000;
+}
+
+
+.buttonPrimary {
+  background-color: #337744;
+}
+
+.buttonPrimary:hover {
+  background-color: #285f37;
+}
+
+
+.arrow {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
   .reservasiTempatMeja {
     font-size: 28px;
   }
 
-  .frameGroup {
+  .buttonGroup {
     flex-direction: column;
     width: 100%;
   }
 
-  .uilarrowLeftParent {
+  .buttonBase {
     width: 100%;
   }
 }
 </style>
+
+

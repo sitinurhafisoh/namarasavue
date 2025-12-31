@@ -150,7 +150,7 @@ const handleSubmit = () => {
 <style scoped>
 
 .reservation-wrapper {
-  background-color: #f5f5f5; 
+  background-color: #ECECEC; 
   min-height: 100vh;
 }
 
@@ -175,10 +175,11 @@ const handleSubmit = () => {
 .btn-outline-light {
   border-width: 2px;
   transition: all 0.3s ease;
+  background-color: #337744;
 }
 
 .btn-outline-light:hover {
-  background-color: #ffffff;
+  background-color: #337744;
   color: #7a5c3d !important;
 }
 

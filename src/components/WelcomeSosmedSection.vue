@@ -24,7 +24,7 @@
 <style scoped>
 .bg-light-custom {
   
-  background-color: #f8f9fa !important; 
+  background-color: #ECECEC ; 
 }
 
 .instagram-cta-section {

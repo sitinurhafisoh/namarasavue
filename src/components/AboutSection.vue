@@ -68,12 +68,14 @@ import nm3 from '../assets/galeri/nm3.jpg'
 
 <style scoped>
 .about-section {
-  background-color: #f8f9fa;
+  background-color: #ECECEC;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
 .section-subtitle {
   color: #8B5E34;
   letter-spacing: 1px;
+  font-family: 'Plus Jakarta Sans';
+  font-weight: 700; 
 }
 
 .section-title {

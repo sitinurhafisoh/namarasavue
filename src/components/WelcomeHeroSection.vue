@@ -36,6 +36,10 @@ const heroStyle = {
 </script>
 
 <style scoped>
+  @import url('https://fonts.googleapis.com/css2?family=Redressed:wght@400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap');
+
 .overlay {
   width: 100%;
   height: 100%;
@@ -53,9 +57,9 @@ const heroStyle = {
 }
 
 .content h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Redressed';
   font-size: 50px;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.2;
 }
 
@@ -71,6 +75,8 @@ const heroStyle = {
   display: flex;
   justify-content: center;
   gap: 14px;
+  font-family: 'Plus Jakarta Sans';
+  color: #fff;
 }
 
 .btn {

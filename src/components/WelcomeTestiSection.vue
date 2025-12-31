@@ -85,7 +85,7 @@ const testimonials = [
 .py-100 { padding: 100px 0; }
 
 .testimonial-section {
-  background-color: #f8f9fa; 
+  background-color: #ECECEC; 
   padding: 100px 0;
 }
 
