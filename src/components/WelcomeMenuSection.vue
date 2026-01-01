@@ -68,12 +68,10 @@ const bestSellers = [
 </script>
 
 <style scoped>
-/* Background Section */
+
 .best-seller {
   background-color: #ECECEC;
 }
-
-/* Subtitle */
 .section-subtitle {
   display: inline-block;
   margin-bottom: 8px;
@@ -84,12 +82,12 @@ const bestSellers = [
   color: #8b5e34;
 }
 
-/* Description */
+
 .description {
   max-width: 700px;
 }
 
-/* Button */
+
 .btn-brown {
   background-color: #634819;
   color: white;
@@ -101,13 +99,13 @@ const bestSellers = [
   color: white;
 }
 
-/* Card Image */
+
 .card-img-top {
   height: 250px;
   object-fit: cover;
 }
 
-/* Radius */
+
 .rounded-4 {
   border-radius: 1.25rem !important;
 }

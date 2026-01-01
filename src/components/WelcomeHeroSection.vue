@@ -108,7 +108,7 @@ const heroStyle = {
   color: #000;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .hero {
     height: 360px;
